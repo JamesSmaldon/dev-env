@@ -3,9 +3,11 @@
 - hosts: controller
   sudo: true
   roles:
+  - system-setup        
   - { role: playlist.java, java_packages: oracle-java8-installer }
   - azmelanar.python
   - geerlingguy.git  
   - git-setup
   - devtools  
   - JamesSmaldon.xfce
+  - devbox.chrome  

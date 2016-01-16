@@ -2,3 +2,4 @@ playlist.java
 azmelanar.python
 geerlingguy.git
 JamesSmaldon.xfce
+devbox.chrome

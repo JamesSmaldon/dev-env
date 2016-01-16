@@ -1,0 +1,6 @@
+---
+
+- name: set default keymap to extd/gb
+  copy: src=../files/keyboard dest=/etc/default/keyboard backup=yes
+
+- command: dpkg-reconfigure keyboard-configuration -f noninteractive
