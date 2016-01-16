@@ -1,0 +1,11 @@
+--- 
+# Note: Add new galaxy roles into requirements.txt so they get installed.
+- hosts: controller
+  sudo: true
+  roles:
+  - { role: playlist.java, java_packages: oracle-java8-installer }
+  - azmelanar.python
+  - geerlingguy.git  
+  - git-setup
+  - devtools  
+  - JamesSmaldon.xfce

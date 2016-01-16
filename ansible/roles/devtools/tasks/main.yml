@@ -1,0 +1,5 @@
+---
+- name: install development tool packages
+  apt: name={{item}} state=present
+  with_items:
+    - vim-gtk       
