@@ -12,8 +12,10 @@ end
 # backwards compatibility). Please don't change it unless you know what
 # you're doing.
 Vagrant.configure(2) do |config|
-  config.vm.box = "ubuntu/trusty64"
-  config.vbguest.auto_update = true
+  config.vm.box = "box-cutter/ubuntu1404-desktop"
+  # We don't want to install the guest additions automatically as 
+  # X windows wont be installed yet.
+  config.vbguest.auto_update = false
 
   # Bring up the virtualbox gui
   config.vm.provider "virtualbox" do |v|
@@ -32,11 +34,13 @@ Vagrant.configure(2) do |config|
   # It's necessary to install ansible manually, as 
   # the ansible_local provisioner installer ansible 2.0, which does not 
   # work with vagrant at the moment.
-  config.vm.provision "shell", 
-    inline:  "sudo apt-get update &&\
-              sudo apt-get -y install python-pip &&\
-              sudo pip install ansible==1.9.4 &&\
-              ansible-galaxy install --force -r /vagrant/ansible/requirements.txt"
+$script = <<'EOF'
+sudo apt-get update 
+sudo apt-get -y install python-pip 
+sudo pip install ansible==1.9.4 
+ansible-galaxy install --force -r /vagrant/ansible/requirements.txt
+EOF
+  config.vm.provision "shell", inline: $script 
 
   config.vm.provision "ansible_local" do |ansible|
     ansible.install = false

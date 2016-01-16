@@ -3,4 +3,11 @@
 - name: set default keymap to extd/gb
   copy: src=../files/keyboard dest=/etc/default/keyboard backup=yes
 
-- command: dpkg-reconfigure keyboard-configuration -f noninteractive
+- name: reconfigure keyboard pkg
+  command: dpkg-reconfigure keyboard-configuration -f noninteractive
+
+- name: Remove webapps
+  apt: name=unity-webapps-service state=absent
+
+- name: add xdg autostart to disable web search
+  copy: src=../files/disablewebsearch.desktop dest=/etc/xdg/autostart/disablewebsearch.desktop
