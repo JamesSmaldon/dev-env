@@ -1,0 +1,1 @@
+/bin/bash -c "gsettings set com.canonical.Unity.Lenses remote-content-search 'none'"
