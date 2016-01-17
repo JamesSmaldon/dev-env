@@ -4,6 +4,7 @@
   sudo: true
   roles:
   - system-setup        
+  - user-setup  
   - { role: playlist.java, java_packages: oracle-java8-installer }
   - azmelanar.python
   - geerlingguy.git  
