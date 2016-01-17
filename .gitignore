@@ -1,0 +1,8 @@
+# Ignore vim backup files.
+*~
+
+# vagrant directory
+.vagrant
+
+# putty key file 
+key.ppk
