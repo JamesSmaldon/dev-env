@@ -1,3 +1,2 @@
 playlist.java
 geerlingguy.git
-devbox.chrome
