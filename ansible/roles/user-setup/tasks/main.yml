@@ -1,4 +1,5 @@
 ---
 # Setting up my user for development, note: password is same as username and
 # will need to be reset
--user: name=james createhome=yes skeleton=/etc/skel state=present password=$6$HxIaFZPe$qGv1unUigyfODc370oV4AQD5W./T6UWbMfxQOD1jrRdIJlrVN4wa31YYXfnj4Jzb8Cv9iTgEnJdmP1zVZKzY50
+- name: Setup dev user
+  user: name=james createhome=yes state=present password=$6$HxIaFZPe$qGv1unUigyfODc370oV4AQD5W./T6UWbMfxQOD1jrRdIJlrVN4wa31YYXfnj4Jzb8Cv9iTgEnJdmP1zVZKzY50

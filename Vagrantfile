@@ -12,7 +12,8 @@ end
 # backwards compatibility). Please don't change it unless you know what
 # you're doing.
 Vagrant.configure(2) do |config|
-  config.vm.box = "box-cutter/ubuntu1404-desktop"
+  #config.vm.box = "npalm/mint17-amd64-cinnamon"
+  config.vm.box = "test"	
   # We don't want to install the guest additions automatically as 
   # X windows wont be installed yet.
   config.vbguest.auto_update = false
@@ -35,9 +36,6 @@ Vagrant.configure(2) do |config|
   # the ansible_local provisioner installer ansible 2.0, which does not 
   # work with vagrant at the moment.
 $script = <<'EOF'
-sudo apt-get update 
-sudo apt-get -y install python-pip 
-sudo pip install ansible==1.9.4 
 ansible-galaxy install --force -r /vagrant/ansible/requirements.txt
 EOF
   config.vm.provision "shell", inline: $script 

@@ -1,5 +1,7 @@
 ---
-
+# Linux Mint identifies family as LinuxMint which causes many playbooks to fail.
+- name: Set ansible OS family to debian
+  set_fact: ansible_os_family="Debian"         
 - name: set default keymap to extd/gb
   copy: src=../files/keyboard dest=/etc/default/keyboard backup=yes
 

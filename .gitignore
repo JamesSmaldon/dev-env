@@ -1,8 +1,10 @@
-# Ignore vim backup files.
+# Ignore vim files.
 *~
+**/*.swp
 
 # vagrant directory
 .vagrant
 
 # putty key file 
 key.ppk
+

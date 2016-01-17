@@ -1,4 +1,3 @@
 playlist.java
-azmelanar.python
 geerlingguy.git
 devbox.chrome
