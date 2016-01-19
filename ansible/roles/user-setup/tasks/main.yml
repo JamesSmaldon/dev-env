@@ -1,5 +1,20 @@
 ---
 # Setting up my user for development, note: password is same as username and
 # will need to be reset
-- name: Setup dev user
-  user: name=james createhome=yes state=present password=$6$HxIaFZPe$qGv1unUigyfODc370oV4AQD5W./T6UWbMfxQOD1jrRdIJlrVN4wa31YYXfnj4Jzb8Cv9iTgEnJdmP1zVZKzY50 shell=/bin/zsh
+- name: add dev user
+  user: name=james createhome=yes state=present password=$6$HxIaFZPe$qGv1unUigyfODc370oV4AQD5W./T6UWbMfxQOD1jrRdIJlrVN4wa31YYXfnj4Jzb8Cv9iTgEnJdmP1zVZKzY50 shell=/bin/zsh groups=sudo append=yes
+
+- name: Set git username
+  sudo_user: james 
+  shell: git config --global user.name JamesSmaldon
+
+- name: Set git e-mail address
+  sudo_user: james
+  shell: git config --global user.email James.Smaldon@gmail.com
+
+- name: create checkout directory for git repos
+  file: path=/home/james/repos owner=james group=james mode=755 state=directory
+
+- name: checkout configuration repo
+  sudo_user: james
+  git: repo=https://github.com/JamesSmaldon/vim-config.git dest=/home/james/repos/vim-config update=yes

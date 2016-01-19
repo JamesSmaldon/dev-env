@@ -1,8 +1,2 @@
 ---
-- name: Set git username
-  sudo_user: vagrant
-  shell: git config --global user.name JamesSmaldon
 
-- name: Set git e-mail address
-  sudo_user: vagrant
-  shell: git config --global user.email James.Smaldon@gmail.com
