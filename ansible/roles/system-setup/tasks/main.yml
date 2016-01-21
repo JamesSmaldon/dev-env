@@ -29,3 +29,5 @@
     - google-chrome-stable
     - zsh
     - curl
+    - texlive 
+    - texlive-latex-extra
