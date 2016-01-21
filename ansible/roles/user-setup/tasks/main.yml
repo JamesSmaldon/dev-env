@@ -18,3 +18,20 @@
 - name: checkout configuration repo
   sudo_user: james
   git: repo=https://github.com/JamesSmaldon/vim-config.git dest=/home/james/repos/vim-config update=yes
+
+- name: install Oh My Zsh
+  shell: sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  sudo_user: james
+
+# The agnoster theme doesn't look right with the system font. Install powerline
+# fonts (The Meslo LG S font will still need to be selected for the terminal)
+- name: clone powerline fonts repo
+  sudo_user: james
+  git: repo=https://github.com/powerline/fonts.git dest=/home/james/repos/powerline-fonts update=yes
+
+- name: install powerline fonts
+  sudo_user: james
+  shell: ~/repos/powerline-fonts/install.sh
+
+- name: install .zshrc file
+  copy: src=../files/.zshrc dest=/home/james/.zshrc owner=james group=james mode=0644 
