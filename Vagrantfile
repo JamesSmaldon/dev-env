@@ -13,7 +13,7 @@ end
 # you're doing.
 Vagrant.configure(2) do |config|
   #config.vm.box = "npalm/mint17-amd64-cinnamon"
-  config.vm.box = "test"	
+  config.vm.box = "nodlams/mint-cinnamon-desktop"	
   # We don't want to install the guest additions automatically as 
   # X windows wont be installed yet.
   config.vbguest.auto_update = false

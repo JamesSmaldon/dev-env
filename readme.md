@@ -2,6 +2,7 @@
 
 ## Requirements
 - Virtualbox 5.0.14
+- Virtualbox oracle extension pack
 - Vagrant 1.8.1
 
 ## To login to VM from putty on Windows
