@@ -5,6 +5,14 @@
 - Virtualbox oracle extension pack
 - Vagrant 1.8.1
 
+## Fix for ansible local provisioner in Vagrant 1.8.1
+There is a bug in 1.8.1 which means the location of the ansible playbooks is
+not set correctly. To workaround this, run:
+
+```
+fix-vagrant-1.8.1\apply_fix.bat
+```
+
 ## To login to VM from putty on Windows
 Putty can't load the private key created by vagrant without conversion to 
 .ppk format, to do this open the following private key file in puttygen:
