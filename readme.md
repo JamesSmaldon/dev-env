@@ -1,5 +1,9 @@
 # Development Environment Setup
 
+## Requirements
+Virtualbox 5.0.14
+Vagrant 1.8.1
+
 ## To login to VM from putty on Windows
 Putty can't load the private key created by vagrant without conversion to 
 .ppk format, to do this open the following private key file in puttygen:
