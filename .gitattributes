@@ -1,0 +1,3 @@
+# Set all line endings to unix, as otherwise the files won't work on linux.
+
+* text eol=lf
