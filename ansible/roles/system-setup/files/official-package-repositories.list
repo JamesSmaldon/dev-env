@@ -4,7 +4,7 @@
 # deb http://packages.linuxmint.com rosa main upstream import 
 
 deb https://mirror.umd.edu/linuxmint/packages rosa main upstream import # id:linuxmint_main
-deb http://extra.linuxmint.com rosa main # id:linuxmint_extra
+#deb http://extra.linuxmint.com rosa main # id:linuxmint_extra
 
 deb http://archive.ubuntu.com/ubuntu trusty main restricted universe multiverse
 deb http://archive.ubuntu.com/ubuntu trusty-updates main restricted universe multiverse
