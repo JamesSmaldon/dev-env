@@ -3,17 +3,8 @@
 - name: Set ansible OS family to debian
   set_fact: ansible_os_family="Debian"         
 
-- name: set default keymap to extd/gb
-  copy: src=../files/keyboard dest=/etc/default/keyboard backup=yes
-
-- name: reconfigure keyboard pkg
-  command: dpkg-reconfigure keyboard-configuration -f noninteractive
-
-- name: Remove webapps
-  apt: name=unity-webapps-service state=absent
-
-- name: add xdg autostart to disable web search
-  copy: src=../files/disablewebsearch.desktop dest=/etc/xdg/autostart/disablewebsearch.desktop
+- name: Replace slow default package repo with faster mirror
+  copy: src=../files/official-package-repositories.list dest=/etc/apt/sources.list.d/official-package-repositories.list mode=0644
 
 - name: install chrome apt-key
   apt_key: url=https://dl-ssl.google.com/linux/linux_signing_key.pub state=present
@@ -24,6 +15,9 @@
 - name: update apt
   apt: update_cache=yes
 
+- name: Remove webapps
+  apt: name=unity-webapps-service state=absent
+
 - name: install packages
   apt: name={{item}} state=present
   with_items:
@@ -33,3 +27,13 @@
     - texlive 
     - texlive-latex-extra
     - git
+
+- name: set default keymap to extd/gb
+  copy: src=../files/keyboard dest=/etc/default/keyboard backup=yes
+
+- name: reconfigure keyboard pkg
+  command: dpkg-reconfigure keyboard-configuration -f noninteractive
+
+
+- name: add xdg autostart to disable web search
+  copy: src=../files/disablewebsearch.desktop dest=/etc/xdg/autostart/disablewebsearch.desktop

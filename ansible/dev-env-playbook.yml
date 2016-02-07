@@ -5,6 +5,5 @@
   roles:
   - { role: system-setup, tags: [system-setup] }
   - { role: user-setup, tags: [user-setup] }
-  - { role: playlist.java, java_packages: oracle-java8-installer }
   - geerlingguy.git  
   - devtools  
