@@ -22,6 +22,7 @@
 - name: install Oh My Zsh
   shell: sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
   sudo_user: james
+  ignore_errors: yes
 
 # The agnoster theme doesn't look right with the system font. Install powerline
 # fonts (The Meslo LG S font will still need to be selected for the terminal)

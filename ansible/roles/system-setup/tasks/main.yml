@@ -24,9 +24,12 @@
     - google-chrome-stable
     - zsh
     - curl
-    - texlive 
-    - texlive-latex-extra
     - git
+    - mint-meta-mate
+    - compiz
+    - compizconfig-settings-manager
+    - compiz-plugins-extra
+    - libdecoration0-dev
 
 - name: set default keymap to extd/gb
   copy: src=../files/keyboard dest=/etc/default/keyboard backup=yes

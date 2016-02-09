@@ -35,6 +35,10 @@ click reset compiz settings.
 Then install the compiz settings manager, and go to utility, and enable the 
 redraw fixes.
 
+## Oh My ZSh Font Configuration
+You have to set the font to "DejaVu Sans Mono for Powerline" or similar to 
+get the arrows working the terminal.
+
 ## Refs
 - [Using ansible galaxy](https://servercheck.in/blog/using-ansible-galaxy)
 - [ansible-vagrant-examples](https://github.com/geerlingguy/ansible-vagrant-examples)
