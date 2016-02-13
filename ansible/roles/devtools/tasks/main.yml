@@ -3,12 +3,16 @@
   apt: name={{item}} state=present
   with_items:
     - vim-gtk      
-    - mit-scheme
+
+# For some reason, the apt module fails to locate the mit-scheme package.
+# I suspect this is an ansible bug.
+- name: install mit-scheme
+  shell: apt-get install --yes mit-scheme
 
 - name: install node version manager
   shell: curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.30.2/install.sh | bash
   sudo_user: james
 
 - name: install node
-  shell: zsh -c ". ~/.zshrc && nvm install v4.2.6"
+  shell: zsh -c ". ~/.nvm/nvm.sh && nvm install v4.2.6"
   sudo_user: james
