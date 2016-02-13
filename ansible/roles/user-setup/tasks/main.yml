@@ -15,10 +15,6 @@
 - name: create checkout directory for git repos
   file: path=/home/james/repos owner=james group=james mode=755 state=directory
 
-- name: checkout configuration repo
-  sudo_user: james
-  git: repo=https://github.com/JamesSmaldon/vim-config.git dest=/home/james/repos/vim-config update=yes
-
 - name: install Oh My Zsh
   shell: sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
   sudo_user: james
